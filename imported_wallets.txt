@@ -1,0 +1,46 @@
+[
+  {
+    "Seed": "vacant clog amateur shield buzz face item diary soda craft pudding alcohol",
+    "Wallet Address": "0x8A9bf4704474EC8074A31eC74aA3Bb53940E4ccF"
+  },
+  {
+    "Seed": "erode someone essay west insect talk wage raven problem solar hip auction",
+    "Wallet Address": "0xDb660e71823335f6D84a6aeD8C0191D255Bb3817"
+  },
+  {
+    "Seed": "rookie cabin ability giant palm bright slight diesel search miracle wave art",
+    "Wallet Address": "0xEF001b8dcD751bB049af4703df62F6E7C4060226"
+  },
+  {
+    "Seed": "urban flush repair fly doctor gate system fork more butter slam amused",
+    "Wallet Address": "0x33756D3f74FC57eE51899AAd05cf4e9A04c43466"
+  },
+  {
+    "Seed": "result cover casino miracle require crater venture remove casual lesson stable absorb",
+    "Wallet Address": "0x54A68a8b690B35ca6bd03033bdcd3334DB9a8CFa"
+  },
+  {
+    "Seed": "fuel space iron nothing tilt few moment dignity fork limb broken afraid",
+    "Wallet Address": "0xAA537272e77197622E53d0DCecD0a604074b630e"
+  },
+  {
+    "Seed": "snap retreat erode drill defense pottery sleep tilt garden modify pluck alpha",
+    "Wallet Address": "0x38681366485bd00c26669d3DB35cB0B38D881DD2"
+  },
+  {
+    "Seed": "fun include shoulder heart mimic mimic gasp unique adapt leave elephant ahead",
+    "Wallet Address": "0x0F1e0ac9641A518C959540cf85f671bC8C92101B"
+  },
+  {
+    "Seed": "arrest mansion wave average pupil dish evil funny south illegal agent afraid",
+    "Wallet Address": "0xD0d361BD984A6520d6A4321f031E5bec204308De"
+  },
+  {
+    "Seed": "police box cup soccer awake pipe draw stone trial interest bag any",
+    "Wallet Address": "0x7A9d3D58A6e358253Bd62dB9b2f07e6499E9bC59"
+  },
+  {
+    "Seed": "laundry crowd cancel scene cave utility demise law sort seed strategy auto",
+    "Wallet Address": "0x4B5725ab20acF020CeCD39aC9d98c6FD6f4b492B"
+  }
+]
