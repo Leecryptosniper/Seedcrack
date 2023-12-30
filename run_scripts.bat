@@ -13,4 +13,3 @@ start /wait cmd /c "python Balance.py"
 echo Balance checker completed.
 
 echo All scripts executed.
-pause

@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seed Crack</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+    
+            // Listen for the 'script_completed' event
+            socket.on('script_completed', function (data) {
+                alert('Seed cracking. Refresh the page to see your cracked seeds.');
+            });
+        });
+    
+        function startCracking() {
+            // Send a POST request to start-cracking endpoint
+            fetch('/run-scripts', { method: 'POST' });
+    
+            // Prevent the form from submitting and refreshing the page
+            return false;
         }
-
-        h1 {
-            color: #333;
-        }
-
-        pre {
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-    </style>
+    </script>
 </head>
 <body>
-    <h1>Cracked Seeds</h1>
-    <pre>{{ content }}</pre>
+    <header>
+        <h1>Seed Crack</h1>
+    </header>
+
+    <form onsubmit="return startCracking()">
+        <button type="submit">Start Cracking</button>
+    </form>
+
+    <section>
+        <h2>Cracked Seeds</h2>
+        <pre>{{ content }}</pre>
+    </section>
 </body>
 </html>
