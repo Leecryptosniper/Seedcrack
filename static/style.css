@@ -1,23 +1,44 @@
-/* style.css */
-
 /* Common styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url('images/background.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Ensures the background image covers the entire body */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    opacity: 0.75; /* Adjust the opacity value as needed */
+}
+/* Add transparency to the body content */
+body::after {
+    content: '';
+    display: block;
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background: rgba(0, 0, 0, 0); /* Adjust the alpha value (0 to 1) for the desired transparency */
+    z-index: -1; /* Place the overlay behind other elements */
 }
 
 /* Header styles */
 header {
-    background-color: #111;
+    background-color: #11111100;
     color: #fff;
     padding: 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     margin: 0;
+    max-inline-size: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* Main content styles */
@@ -28,7 +49,13 @@ body {
 }
 
 h2 {
-    color: #00ffcc; /* Neon Green */
+    background-color: #00000062; /* Orange-Red */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 pre {
@@ -37,6 +64,30 @@ pre {
     border: 1px solid #333;
     overflow: auto;
 }
+
+/* New styles for the wallets content */
+.wallets-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.wallet {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    max-inline-size: 300px;
+    text-align: center;
+    overflow: hidden; /* Prevent text overflow */
+}
+
+.wallet p {
+    margin: 10px 0;
+}
+
 
 /* Center align headers and buttons */
 h1, h2 {
@@ -50,6 +101,48 @@ button {
 }
 
 /* Start Cracking button styles */
+button {
+    background-color: #ff4500; /* Orange-Red */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #cc3700; /* Darker Orange-Red on hover */
+}
+
+/* Style the code entry container */
+.code-entry-container {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+}
+
+/* Style the input and submit button */
+form {
+    margin-block-start: 20px;
+}
+
+label {
+    display: block;
+    margin-block-end: 10px;
+    color: #00ffcc; /* Neon Green */
+}
+
+input {
+    inline-size: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-block-end: 20px;
+}
+
 button {
     background-color: #ff4500; /* Orange-Red */
     color: #fff;

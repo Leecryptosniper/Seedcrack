@@ -1,42 +1,34 @@
 [
   {
-    "Seed": "endorse rack idle argue ask minute coconut album hat feel super accident",
-    "Wallet Address": "0xd4ff276dA55d6A43f46D3C134f0c4f14545A94d5"
+    "Seed": "derive shadow opinion benefit bamboo kingdom butter siren shadow mammal dove absurd",
+    "Wallet Address": "0xCbdfC19f00057dc255963668098e163F18256dcD"
   },
   {
-    "Seed": "race right jealous steel alien chronic cricket manual laundry reward memory about",
-    "Wallet Address": "0x516Be37e3473E2B61C9be308064058f2272B85Ba"
+    "Seed": "anchor elevator able hello super talent parrot scan exchange caught brief apple",
+    "Wallet Address": "0x1A0080880fa960bF86986bC8E1C63409bce76E79"
   },
   {
-    "Seed": "spare school monster purpose attitude fall often view sadness mask sell autumn",
-    "Wallet Address": "0xFd33DD82624298457899699D20Ef808A02239CEF"
+    "Seed": "all furnace nothing cheese jewel abstract side hover destroy industry journey arena",
+    "Wallet Address": "0xE7474cdc60B38d011BA106465A4Cc03944df3256"
   },
   {
-    "Seed": "agent dog acid pass talent another fatal arch maple someone fiber avocado",
-    "Wallet Address": "0xE695a064008eEC32e3E3cF9A5871710987245167"
+    "Seed": "liberty swim gap retire august round venue analyst goddess brand sister acid",
+    "Wallet Address": "0x102d3615b3D23b66b6e1819076811CFcB0e0338c"
   },
   {
-    "Seed": "monster earth coach waste secret beyond top depend gym police cheap afford",
-    "Wallet Address": "0x50338f374863F254BBd05054C523ae2756062Dd6"
+    "Seed": "olive leader symbol patch badge romance test file cargo movie tiny anger",
+    "Wallet Address": "0xbC02EAe2a28D03a0134d49B3bc200b2378435E01"
   },
   {
-    "Seed": "glad raw system owner there order spoil taxi ceiling buzz october amazing",
-    "Wallet Address": "0x9E58B9097EEF48Ba65E9e83DEb4C3A575F5a1C08"
+    "Seed": "foster saddle process critic armed convince benefit abuse pass resource type among",
+    "Wallet Address": "0xE4E1901938470bF33b1598f32d1565658681550c"
   },
   {
-    "Seed": "law huge orbit food belt session order between nation sleep clap another",
-    "Wallet Address": "0xd495da4aF31Dfb32D794FcA823a166719ef703bF"
+    "Seed": "digital already festival chase burger jazz nominee pupil strong orient chunk assume",
+    "Wallet Address": "0x1d86b3C7c84FDc1377E18459a00869DbF11c8c73"
   },
   {
-    "Seed": "rice enough fury afraid vacant mansion quality twist couch soda father age",
-    "Wallet Address": "0x5dc958C7B7311cf6e42d642255807f773C960e7d"
-  },
-  {
-    "Seed": "margin seed okay gown test erase apart category thing spot away alarm",
-    "Wallet Address": "0x45A1543d362B10421386Ed33C62a80143181F26B"
-  },
-  {
-    "Seed": "erase dice verify merry lumber radar wash goose minimum cage pave arctic",
-    "Wallet Address": "0x34E95fea0844e08F96E11d031d46F5ccb6d38Fe3"
+    "Seed": "twenty prevent swing cake bar borrow machine fee discover bring pull achieve",
+    "Wallet Address": "0xb7D04e3A055058CE1ddF12eCCdbCb78875cBC2e4"
   }
 ]

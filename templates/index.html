@@ -1,5 +1,3 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,33 +11,53 @@
         document.addEventListener('DOMContentLoaded', function () {
             var socket = io.connect('http://' + document.domain + ':' + location.port);
     
-            // Listen for the 'script_completed' event
-            socket.on('script_completed', function (data) {
-                alert('Seed cracking. Refresh the page to see your cracked seeds.');
+            // Listen for the 'wallets_updated' event
+            socket.on('wallets_updated', function (data) {
+                // Update the wallets on the page without refreshing
+                updateWallets(data.wallets);
             });
+    
+            function updateWallets(wallets) {
+                var walletsContent = document.querySelector('.wallets-content');
+    
+                // Clear existing content
+                walletsContent.innerHTML = '';
+    
+                // Add new wallets
+                wallets.forEach(function (wallet) {
+                    var walletDiv = document.createElement('div');
+                    walletDiv.className = 'wallet';
+    
+                    walletDiv.innerHTML = `
+                        <p><strong>Seed Phrase:</strong> ${wallet.Seed}</p>
+                        <p><strong>Wallet Address:</strong> ${wallet['Wallet Address']}</p>
+                    `;
+    
+                    walletsContent.appendChild(walletDiv);
+                });
+            }
         });
-    
-        function startCracking() {
-            // Send a POST request to start-cracking endpoint
-            fetch('/run-scripts', { method: 'POST' });
-    
-            // Prevent the form from submitting and refreshing the page
-            return false;
-        }
     </script>
 </head>
 <body>
     <header>
-        <h1>Seed Crack</h1>
+        {{ header }}
     </header>
 
     <form onsubmit="return startCracking()">
-        <button type="submit">Start Cracking</button>
+        <button type="submit">Generate</button>
     </form>
 
     <section>
-        <h2>Cracked Seeds</h2>
-        <pre>{{ content }}</pre>
+        <h2>Imported Wallets</h2>
+        <div class="wallets-content">
+            {% for wallet in content %}
+                <div class="wallet">
+                    <p><strong>Seed Phrase:</strong> {{ wallet.Seed }}</p>
+                    <p><strong>Wallet Address:</strong> {{ wallet['Wallet Address'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </section>
 </body>
 </html>
