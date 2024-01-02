@@ -1,47 +1,34 @@
-# app.py
-
-from flask import Flask, render_template, request
-from flask_socketio import SocketIO
-import subprocess
-import threading
-import os
+#Balance.py
 import json
+from web3 import Web3, HTTPProvider
 
-# Import the generate_header function from header.py
-from header import generate_header
+# Infura API key and endpoint
+infura_api_key = 'c03616c36f1b4bd99dc1e13d77b40de0'
+infura_endpoint = f'https://mainnet.infura.io/v3/{infura_api_key}'
 
-app = Flask(__name__)
-socketio = SocketIO(app)
+# Connect to the Ethereum network using Infura
+web3 = Web3(HTTPProvider(infura_endpoint))
 
-def run_scripts():
-    # Code to execute the run_scripts.bat script
-    subprocess.run(['run_scripts.bat'])
+# Function to check balance and print once if any non-zero balance is found
+def check_and_print_progress(wallets):
+    print('Search in Progress...')
 
-    # Notify the client that the script has completed
-    socketio.emit('script_completed', {'status': 'success'})
+    for wallet in wallets:
+        try:
+            # Check the balance of the wallet address
+            balance_wei = web3.eth.get_balance(wallet["Wallet Address"])
 
-    # Broadcast an event to inform the client about new wallets
-    socketio.emit('wallets_updated')
+            # If the balance is non-zero, print and save it
+            if balance_wei > 0:
+                print(f'Balance Found @ {wallet["Wallet Address"]}')
+                with open('wallets_with_non_zero_balance.txt', 'a') as outfile:
+                    outfile.write(f'Seed: {wallet["Seed"]}\nWallet Address: {wallet["Wallet Address"]}\nBalance Wei: {balance_wei}\n\n')
+        except Exception as e:
+            print(f'Error checking balance for address: {wallet["Wallet Address"]}\n{e}')
 
-@app.route('/')
-def index():
-    # Use the generate_header function to get the ASCII art header
-    header = generate_header()
+# Read wallet information from imported_wallets.txt
+with open('imported_wallets.txt', 'r') as file:
+    wallets_to_check = json.load(file)
 
-    # Read the content of the imported_wallets.txt file
-    with open("imported_wallets.txt", "r") as file:
-        content = json.load(file)
-
-    # Pass the header and content to the template
-    return render_template('index.html', header=header, content=content)
-
-@app.route('/run-scripts', methods=['POST'])
-def start_cracking():
-    # Start a new thread to run the script asynchronously
-    threading.Thread(target=run_scripts).start()
-
-    # Respond immediately to the client
-    return 'Task started successfully. Refresh the page after completion.'
-
-if __name__ == '__main__':
-    socketio.run(app, debug=True)
+# Call the function to check and print progress
+check_and_print_progress(wallets_to_check)

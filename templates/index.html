@@ -11,32 +11,19 @@
         document.addEventListener('DOMContentLoaded', function () {
             var socket = io.connect('http://' + document.domain + ':' + location.port);
     
-            // Listen for the 'wallets_updated' event
-            socket.on('wallets_updated', function (data) {
-                // Update the wallets on the page without refreshing
-                updateWallets(data.wallets);
+            // Listen for the 'script_completed' event
+            socket.on('script_completed', function (data) {
+                alert('Seed cracking. Refresh the page to see your cracked seeds.');
             });
-    
-            function updateWallets(wallets) {
-                var walletsContent = document.querySelector('.wallets-content');
-    
-                // Clear existing content
-                walletsContent.innerHTML = '';
-    
-                // Add new wallets
-                wallets.forEach(function (wallet) {
-                    var walletDiv = document.createElement('div');
-                    walletDiv.className = 'wallet';
-    
-                    walletDiv.innerHTML = `
-                        <p><strong>Seed Phrase:</strong> ${wallet.Seed}</p>
-                        <p><strong>Wallet Address:</strong> ${wallet['Wallet Address']}</p>
-                    `;
-    
-                    walletsContent.appendChild(walletDiv);
-                });
-            }
         });
+    
+        function startCracking() {
+            // Send a POST request to start-cracking endpoint
+            fetch('/run-scripts', { method: 'POST' });
+    
+            // Prevent the form from submitting and refreshing the page
+            return false;
+        }
     </script>
 </head>
 <body>

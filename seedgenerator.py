@@ -35,7 +35,6 @@ def save_seed_phrases(word_list, num_phrases, file_path):
             # Join the words into a seed phrase without quotes and commas
             formatted_phrase = ' '.join(seed_phrase.split())
             file.write(formatted_phrase + '\n')
-            
 # Example usage with a sample word list (BIP-39 English word list)
 example_word_list = [
  "abandon", 
@@ -2089,7 +2088,7 @@ example_word_list = [
 ]
 
 # Specify the number of phrases you want to generate
-num_phrases_to_generate = 100
+num_phrases_to_generate = 1000
 
 # Specify the file path to save the generated seed phrases
 file_path = 'user_seed_phrases.txt'
